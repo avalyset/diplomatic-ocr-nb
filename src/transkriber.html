@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<title>Aars — blindtranskripsjon (CER-fasit)</title>
+<style>
+  :root { --bg:#1e1e1e; --panel:#252526; --fg:#e8e8e8; --acc:#4a9; --line:#3a3a3a; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,Helvetica,Arial,sans-serif; overflow:hidden; }
+  #rules { background:#3a2b12; color:#f0d9a8; padding:6px 12px; font-size:13px; line-height:1.4;
+    border-bottom:1px solid var(--line); }
+  #rules b { color:#ffcf6b; }
+  #bar { display:flex; align-items:center; gap:14px; padding:8px 12px; background:var(--panel);
+    border-bottom:1px solid var(--line); }
+  #bar button { background:#333; color:var(--fg); border:1px solid #555; border-radius:5px;
+    padding:6px 12px; font-size:14px; cursor:pointer; }
+  #bar button:hover { background:#444; }
+  #pos { font-size:15px; font-weight:600; }
+  #pdf { font-size:13px; color:#9a9a9a; }
+  #saved { font-size:12px; color:var(--acc); margin-left:auto; }
+  #exp { background:#2a5; border-color:#3c7; color:#04110a; font-weight:700; }
+  #main { display:flex; height:calc(100% - 96px); }
+  #left { width:50%; height:100%; background:#111; overflow:hidden; position:relative;
+    border-right:2px solid var(--line); cursor:grab; }
+  #left.drag { cursor:grabbing; }
+  #img { position:absolute; top:0; left:0; transform-origin:0 0; user-select:none;
+    -webkit-user-drag:none; }
+  #hint { position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,.6); color:#bbb;
+    font-size:11px; padding:3px 8px; border-radius:4px; }
+  #right { width:50%; height:100%; display:flex; flex-direction:column; }
+  #chars { display:flex; gap:6px; padding:8px; background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  #chars button { font-family:monospace; font-size:19px; width:40px; height:40px; background:#333;
+    color:#fff; border:1px solid #666; border-radius:6px; cursor:pointer; }
+  #chars button:hover { background:var(--acc); color:#04110a; }
+  textarea { flex:1; width:100%; resize:none; border:0; outline:none; padding:16px;
+    background:#1b1b1b; color:#f4f4f4; font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:18px; line-height:1.55; }
+</style>
+</head>
+<body>
+  <div id="rules">
+    <b>Trofast diplomatarisk.</b> Typoskriptet som det STÅR. <b>ö er ö, ikke ø.</b>
+    Kommafeil står. Skrivefeil står. Ikke moderniser, ikke rett, ikke rens.
+    Dette er en <b>målestokk</b>, ikke en leseutgave. Er siden ikke typoskript: skriv <b>[IKKE TYPOSKRIPT]</b>.
+  </div>
+  <div id="bar">
+    <button id="prev">&#9664; Forrige</button>
+    <span id="pos"></span>
+    <button id="next">Neste &#9654;</button>
+    <span id="pdf"></span>
+    <button id="exp">Eksporter fasit.json</button>
+    <span id="saved"></span>
+  </div>
+  <div id="main">
+    <div id="left">
+      <img id="img" alt="sidebilde" draggable="false">
+      <div id="hint">Scroll = zoom · dra = panorer · dobbeltklikk = tilbakestill</div>
+    </div>
+    <div id="right">
+      <div id="chars"></div>
+      <textarea id="ta" spellcheck="false" autocomplete="off" autocorrect="off"
+        autocapitalize="off" wrap="soft" placeholder="Skriv av det du ser på bildet…"></textarea>
+    </div>
+  </div>
+
+<script>
+// ---- sidene (kun id/filnavn — INGEN OCR-tekst) ----
+const PAGES = [
+  {id:"Scan4_p003", file:"Scan4_p003-003.png", pdf:3},
+  {id:"Scan4_p027", file:"Scan4_p027-027.png", pdf:27},
+  {id:"Scan4_p031", file:"Scan4_p031-031.png", pdf:31},
+  {id:"Scan4_p051", file:"Scan4_p051-051.png", pdf:51},
+  {id:"Scan4_p054", file:"Scan4_p054-054.png", pdf:54},
+  {id:"Scan4_p079", file:"Scan4_p079-079.png", pdf:79},
+  {id:"Scan4_p084", file:"Scan4_p084-084.png", pdf:84},
+  {id:"Scan4_p100", file:"Scan4_p100-100.png", pdf:100},
+];
+const KEY = "aars_cer_fasit_v1";
+let data = {};
+try { data = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { data = {}; }
+let idx = 0;
+
+const ta = document.getElementById("ta");
+const img = document.getElementById("img");
+const pos = document.getElementById("pos");
+const pdf = document.getElementById("pdf");
+const saved = document.getElementById("saved");
+const left = document.getElementById("left");
+
+// ---- lagring (debounce 500ms) ----
+let t=null;
+function persist(flash){
+  data[PAGES[idx].id] = ta.value;
+  localStorage.setItem(KEY, JSON.stringify(data));
+  if(flash){ saved.textContent="lagret ✓"; clearTimeout(saved._t); saved._t=setTimeout(()=>saved.textContent="",1200); }
+}
+ta.addEventListener("input", ()=>{ clearTimeout(t); t=setTimeout(()=>persist(true),500); });
+
+// ---- bildeviewer: zoom + pan ----
+let scale=1, ox=0, oy=0, drag=false, sx=0, sy=0;
+function apply(){ img.style.transform = `translate(${ox}px,${oy}px) scale(${scale})`; }
+function fit(){
+  scale=1; ox=0; oy=0;
+  const iw = img.naturalWidth || 1;
+  const lw = left.clientWidth;
+  scale = lw / iw;               // fyll bredden på venstre panel
+  apply();
+}
+img.addEventListener("load", fit);
+left.addEventListener("wheel",(e)=>{
+  e.preventDefault();
+  const r=left.getBoundingClientRect();
+  const mx=e.clientX-r.left, my=e.clientY-r.top;
+  const f = e.deltaY<0 ? 1.12 : 1/1.12;
+  const ns = Math.min(12, Math.max(0.1, scale*f));
+  ox = mx - (mx-ox)*(ns/scale);
+  oy = my - (my-oy)*(ns/scale);
+  scale=ns; apply();
+},{passive:false});
+left.addEventListener("mousedown",(e)=>{ drag=true; left.classList.add("drag"); sx=e.clientX-ox; sy=e.clientY-oy; });
+window.addEventListener("mousemove",(e)=>{ if(!drag)return; ox=e.clientX-sx; oy=e.clientY-sy; apply(); });
+window.addEventListener("mouseup",()=>{ drag=false; left.classList.remove("drag"); });
+left.addEventListener("dblclick", fit);
+
+// ---- navigasjon ----
+function show(i){
+  persist(false);
+  idx = (i+PAGES.length)%PAGES.length;
+  const p = PAGES[idx];
+  img.src = p.file;
+  ta.value = data[p.id] || "";
+  pos.textContent = `Side ${idx+1} av ${PAGES.length}`;
+  pdf.textContent = `(${p.id} · PDF-side ${p.pdf})`;
+  ta.focus();
+}
+document.getElementById("prev").onclick=()=>show(idx-1);
+document.getElementById("next").onclick=()=>show(idx+1);
+
+// ---- spesialtegn ----
+const chars = ["ö","ø","æ","å","Ö","Æ","Å","–"];
+const cbar = document.getElementById("chars");
+chars.forEach(c=>{
+  const b=document.createElement("button"); b.textContent=c;
+  b.onmousedown=(e)=>{ e.preventDefault();
+    const s=ta.selectionStart, en=ta.selectionEnd;
+    ta.value = ta.value.slice(0,s)+c+ta.value.slice(en);
+    ta.selectionStart=ta.selectionEnd=s+c.length; ta.focus();
+    clearTimeout(t); t=setTimeout(()=>persist(true),500);
+  };
+  cbar.appendChild(b);
+});
+
+// ---- eksport ----
+document.getElementById("exp").onclick=()=>{
+  persist(false);
+  const out={}; PAGES.forEach(p=> out[p.id]= data[p.id]||"");
+  const blob=new Blob([JSON.stringify(out,null,1)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download="fasit.json"; a.click();
+};
+
+show(0);
+</script>
+</body>
+</html>

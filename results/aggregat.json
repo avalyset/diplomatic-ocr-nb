@@ -1,0 +1,69 @@
+{
+ "protokoll": {
+  "seed": 1930,
+  "bootstrap_resamples": 10000,
+  "n_sider": 8,
+  "reftegn": 12478,
+  "reford": 2188,
+  "sidetall_fjernet_tegn_baseline": 34,
+  "fasit": "data/fasit_n8.json",
+  "utvalg": "data/UTVALG.txt"
+ },
+ "metoder": {
+  "baseline_tesseract": {
+   "CER": 0.21317518833146337,
+   "CER_KI": [
+    0.14700366897676315,
+    0.2809554241891676
+   ],
+   "WER": 0.5237659963436929,
+   "WER_KI": [
+    0.40966576332429994,
+    0.6474121996303143
+   ],
+   "per_side_cer_min": 0.0983502538071066,
+   "per_side_cer_max": 0.3598161523309258,
+   "kommentar": "txt/ rå tesseract 400 dpi gråtone, -l nor --psm 6"
+  },
+  "vision_claude_opus_4_8": {
+   "CER": 0.053454079179355664,
+   "CER_KI": [
+    0.030339131125407037,
+    0.07961120111085397
+   ],
+   "WER": 0.12888482632541134,
+   "WER_KI": [
+    0.10218652387327086,
+    0.16178521617852162
+   ],
+   "per_side_cer_min": 0.022208121827411168,
+   "per_side_cer_max": 0.11424819435325016,
+   "kommentar": "diplomatarisk prompt, se src/vision_ocr.py"
+  },
+  "adaptiv_terskling_a": {
+   "status": "eliminert",
+   "maalt_paa": "Scan4_p084",
+   "baseline_p084_cer": 0.3598161523309258,
+   "vinduer": {
+    "151x151+8%": {
+     "cer": 0.778069599474721,
+     "ordtelling_hyp": 262
+    },
+    "201x201+10%": {
+     "cer": 1.1411687458962574,
+     "ordtelling_hyp": 262
+    },
+    "251x251+12%": {
+     "cer": 1.0164149704530532,
+     "ordtelling_hyp": 262
+    }
+   },
+   "kommentar": "ImageMagick -lat; speckle på Adobe Scan-foto blåser opp ordtelling"
+  },
+  "adobe_tekstlag_d": {
+   "status": "død",
+   "maalbart_paa_fasit": false,
+   "begrunnelse": "Scan1/2/4 (Adobe Scan iOS) har 0 tegn tekstlag; de 8 fasitsidene er alle Scan4. Scan3 (Paper Capture) har tekstlag, men ö=0/ø=112 — normalisert, dermed diskvalifisert."
+  }
+ }
+}

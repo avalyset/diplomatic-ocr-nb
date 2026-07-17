@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Hvis du bruker dette materialet, siter det slik:"
+title: "Diplomatarisk troskap i OCR av norsk typoskript"
+abstract: >-
+  Blindvalidert metodesammenligning: hvor trofast kan ulike OCR-metoder
+  gjengi et norsk typoskript fra 1920-årene (riksmål med ö) uten stille å
+  modernisere det? Fire metoder målt mot en menneskeskrevet blindfasit på
+  åtte tilfeldig trukne sider, med en måleprotokoll for diplomatarisk troskap
+  (ö/ø-rate og arkaisk bevaringsratio).
+type: software
+authors:
+  - family-names: Nicolaysen
+    given-names: Eirik Botten
+    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"   # legg inn ORCID-iD
+repository-code: "https://github.com/avalyset/diplomatic-ocr-nb"
+license:
+  - MIT
+  - CC-BY-4.0
+keywords:
+  - OCR
+  - diplomatarisk transkripsjon
+  - norsk
+  - riksmål
+  - historisk tekst
+  - blindprotokoll
+  - CER
+version: 0.1.0
+date-released: 2026-07-17

@@ -1,0 +1,29 @@
+# ═══ KOMPARTMENTALISERING — dette skal aldri inn (E1) ═══
+# Hemmeligheter
+*.key
+*.pem
+.env
+.env.*
+
+# Kildeobjektet: Vigelandsmuseets samling — ikke publisert her
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+
+# Bokmanus / dagboktekst ut over de åtte fasitsidene
+*_1920_1930*.md
+hullet.md
+aars_*.md
+vision/
+txt/
+
+# ═══ Vanlig støy ═══
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+*_snd.jpg
+*_proc.png

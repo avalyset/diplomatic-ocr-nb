@@ -1,0 +1,2 @@
+seed=1930, random.sample(range(1,105),8)
+Scan4 PDF-sider: 3, 27, 31, 51, 54, 79, 84, 100

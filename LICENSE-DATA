@@ -1,0 +1,35 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+This license applies to the DATA and MEASUREMENTS in this repository:
+  data/       (fasit_n8.json, UTVALG.txt)
+  results/    (n8_eksplorativ.tsv, aggregat.json, forvekslinger_baseline.tsv,
+               troskap.tsv)
+
+The source code (src/) is licensed separately under the MIT License; see LICENSE.
+
+You are free to:
+  * Share  — copy and redistribute the material in any medium or format
+  * Adapt  — remix, transform, and build upon the material for any purpose,
+             even commercially.
+
+Under the following terms:
+  * Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor endorses
+    you or your use.
+  * No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+Suggested attribution:
+  Eirik Botten Nicolaysen (2026), "Diplomatarisk troskap i OCR av norsk
+  typoskript", CC BY 4.0. https://github.com/avalyset/diplomatic-ocr-nb
+
+The full legal code is available at:
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+NOTE ON THE SOURCE OBJECT: The transcribed diary text in data/fasit_n8.json
+consists of eight pages from a typescript held in the collection of the
+Vigeland Museum (Vigelandsmuseet), Oslo. Publication of the page images
+themselves is subject to separate clearance with the institution and is not
+covered here. See docs/decisions/ADR-009.
