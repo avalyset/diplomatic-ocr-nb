@@ -73,12 +73,14 @@ null i den fryktede retningen (ö→ø).
 1. *Ingen kontrollarm.* Om prompten forårsaket troskapen, eller om modellen
    ville vært trofast uansett, er **ikke** målt. Ingen kausal påstand kan
    fremsettes fra disse dataene.
-2. *Retningen den andre veien.* Den menneskelige fasiten har ö = 65, ø = 3,
-   mens B har ö = 71, ø = 0. B normaliserte altså ikke ö→ø, men differansen
-   (tre ø i fasit, null i B) betyr enten at B leste tre genuine ø som ö
-   (en liten troskapsfeil, motsatt retning av den fryktede), eller at
-   fasitskriveren skrev ø der kilden har ö. Ikke avgjort her. Uansett er
-   avviket allerede talt med i Bs 5,35 % CER.
+2. *Overkorrigering den andre veien.* Den menneskelige fasiten har ö = 65,
+   ø = 3, mens B har ö = 71, ø = 0 — B fant altså *færre* ø enn mennesket.
+   B normaliserte ikke ö→ø (den fryktede retningen), men promptens eksplisitte
+   «ö skal være ö, ikke ø» kan ha overkorrigert *motsatt* vei og gjort tre
+   ekte ø til ö. Alternativt skrev fasitskriveren ø der kilden har ö — ikke
+   avgjort her. Prompten ligger i repoet (`src/vision_ocr.py`), så en leser
+   kan se den nøyaktige instruksjonen som kan ha forårsaket avviket. Uansett
+   er det talt med i Bs 5,35 % CER.
 
 ## 5. Forkastede metoder — negative resultater
 

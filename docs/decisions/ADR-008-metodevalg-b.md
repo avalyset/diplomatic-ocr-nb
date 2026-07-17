@@ -34,8 +34,8 @@ bevarer ö (71/0), efter, skulde, nu (`results/troskap.tsv`).
 2. *Ingen kontrollarm.* Om prompten forårsaket troskapen, eller om modellen
    ville vært trofast uansett, er ikke målt. Ingen kausal påstand.
 
-Nøkkelen leses fra miljøvariabel (`ANTHROPIC_KEY`), aldri hardkodet, aldri i
-repoet (`src/vision_ocr.py`).
+Nøkkelen leses fra miljøvariabel (`ANTHROPIC_API_KEY`, standardnavnet SDK-en
+bruker), aldri hardkodet, aldri i repoet (`src/vision_ocr.py`).
 
 ## Alternativer vurdert
 

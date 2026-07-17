@@ -8,14 +8,14 @@ diplomatarisk prompt (bevar ö, arkaisk ortografi, skrivefeil, tegnsetting)
 og lagrer råteksten. Måler ö/ø for å avdekke stille normalisering.
 
 NØKKELEN LESES FRA MILJØVARIABEL — aldri hardkodet, aldri i repoet:
-    export ANTHROPIC_KEY=...        # settes i skallet før kjøring
+    export ANTHROPIC_API_KEY=...        # settes i skallet før kjøring
 Scriptet inneholder ingen nøkkelverdi. Se docs/decisions/ADR-008.
 
 Sidebildene (PNG) er IKKE en del av repoet — objektet tilhører
 Vigelandsmuseets samling. Pek --png-dir mot din egen kopi.
 
 Bruk:
-    export ANTHROPIC_KEY=...
+    export ANTHROPIC_API_KEY=...
     python vision_ocr.py --png-dir /sti/til/png --glob 'Scan4_p*.png' --out-dir ut/
 """
 import argparse, base64, glob, json, os, re, subprocess, sys, urllib.request
@@ -31,10 +31,10 @@ PROMPT = (
 
 
 def hent_noekkel():
-    key = os.environ.get("ANTHROPIC_KEY")
+    key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
-        sys.exit("FEIL: miljøvariabelen ANTHROPIC_KEY er ikke satt. "
-                 "Kjør:  export ANTHROPIC_KEY=...  (nøkkelen skal aldri i repoet)")
+        sys.exit("FEIL: miljøvariabelen ANTHROPIC_API_KEY er ikke satt. "
+                 "Kjør:  export ANTHROPIC_API_KEY=...  (nøkkelen skal aldri i repoet)")
     return key
 
 

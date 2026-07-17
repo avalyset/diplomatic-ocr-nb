@@ -57,7 +57,7 @@ Baseline reproduserer `results/aggregat.json → baseline` bit for bit
 Metode B (krever egen API-nøkkel og egne bilder):
 
 ```bash
-export ANTHROPIC_KEY=...          # aldri i repoet
+export ANTHROPIC_API_KEY=...      # aldri i repoet
 python src/vision_ocr.py --png-dir /sti/til/png --glob 'Scan4_p*.png' --out-dir ut/
 ```
 
