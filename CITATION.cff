@@ -11,7 +11,7 @@ type: software
 authors:
   - family-names: Nicolaysen
     given-names: Eirik Botten
-    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"   # legg inn ORCID-iD
+    orcid: "https://orcid.org/0009-0001-9188-6788"
 repository-code: "https://github.com/avalyset/diplomatic-ocr-nb"
 license:
   - MIT
