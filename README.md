@@ -23,7 +23,7 @@ helst historisk korpus. Se [`METODE.md`](METODE.md).
 
 ```
 METODE.md              det som er målt, ingenting mer
-docs/decisions/        ADR-kjede (ADR-001 … ADR-009), alle retrospektive
+docs/decisions/        ADR-kjede (ADR-001 … ADR-010), alle retrospektive
 data/
   fasit_n8.json        blindtranskripsjon, 8 sider (2 188 ord / 12 478 tegn)
   UTVALG.txt           trekket: seed 1930
