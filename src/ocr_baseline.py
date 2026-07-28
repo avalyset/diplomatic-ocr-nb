@@ -12,7 +12,7 @@ andre metoder måles mot.
     tesseract -l nor --psm 6       norsk, anta én sammenhengende tekstblokk
 
 Ingen stavekontroll, ingen normalisering, ingen rensing — rå OCR.
-Kilde-PDF-ene er IKKE en del av repoet (Vigelandsmuseets samling).
+Kilde-PDF-ene er IKKE en del av repoet (en museumssamling i Oslo).
 
 Bruk:
     python ocr_baseline.py --pdf "/sti/Scan4Aars.pdf" --stem Scan4Aars --out-dir txt/

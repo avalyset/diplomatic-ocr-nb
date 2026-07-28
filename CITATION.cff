@@ -32,3 +32,29 @@ keywords:
   - populasjonsdekkende porter
 version: 0.2.0
 date-released: 2026-07-28
+references:
+  # Utgivelser der metoden faktisk er brukt i produksjon (relasjon: references).
+  - type: book
+    title: "Harald Aars: Dagbøker, bind I"
+    isbn: "978-82-694238-8-4"
+    authors:
+      - family-names: Aars
+        given-names: Harald
+  - type: book
+    title: "Harald Aars: Dagbøker, bind II"
+    isbn: "978-82-694238-7-8"
+    authors:
+      - family-names: Aars
+        given-names: Harald
+  - type: book
+    title: "Harald Aars: Dagbøker, bind III"
+    isbn: "978-82-694238-9-1"
+    authors:
+      - family-names: Aars
+        given-names: Harald
+  - type: book
+    title: "Gustav Vigeland: Erindringer"
+    isbn: "978-82-694238-6-0"
+    authors:
+      - family-names: Vigeland
+        given-names: Gustav

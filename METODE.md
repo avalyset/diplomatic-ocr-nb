@@ -15,7 +15,7 @@ og ingen redaksjonshistorie ligger i dette repoet — bare tallene og eksemplene
 
 ## 1. Objektet
 
-Anonymt typoskript, ett eksemplar, i Vigelandsmuseets samling.
+Anonymt typoskript, ett eksemplar, i en museumssamling i Oslo.
 Transkribert fra Harald Aars' (1875–1945) håndskrevne dagbøker.
 Ukjent hånd, ukjent tidspunkt. Manusside 1–237+, 14.10.1920 – nov. 1940.
 Riksmål med ö. Skannet med Adobe Scan (iOS), 400 dpi.
@@ -24,7 +24,7 @@ Riksmål med ö. Skannet med Adobe Scan (iOS), 400 dpi.
 fastslått. Dette er en åpen luke i utgaven og skal stå som det.
 
 Sidebildene og kildeteksten ut over de åtte fasitsidene er **ikke** en del
-av dette repoet; objektet tilhører museets samling og avklares med
+av dette repoet; objektet tilhører en museumssamling i Oslo og avklares med
 institusjonen før eventuell bildepublisering. Fasit-transkripsjonen av de
 åtte sidene kan publiseres uavhengig av bildene (se ADR-009).
 

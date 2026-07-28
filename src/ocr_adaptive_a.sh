@@ -13,7 +13,7 @@
 #   -lat 251x251+12%  -> CER 101,6 %
 # Vinner der er vinner overalt; ingen vant, så A ble ikke kjørt på alle 8.
 #
-# Sidebildene (PNG) er IKKE en del av repoet (Vigelandsmuseets samling).
+# Sidebildene (PNG) er IKKE en del av repoet (en museumssamling i Oslo).
 #
 # Bruk:  ./ocr_adaptive_a.sh <side.png> <vindu>   f.eks.  ./ocr_adaptive_a.sh p084.png 151x151+8%
 set -euo pipefail

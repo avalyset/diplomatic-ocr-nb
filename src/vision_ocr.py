@@ -12,7 +12,7 @@ NØKKELEN LESES FRA MILJØVARIABEL — aldri hardkodet, aldri i repoet:
 Scriptet inneholder ingen nøkkelverdi. Se docs/decisions/ADR-008.
 
 Sidebildene (PNG) er IKKE en del av repoet — objektet tilhører
-Vigelandsmuseets samling. Pek --png-dir mot din egen kopi.
+en museumssamling i Oslo. Pek --png-dir mot din egen kopi.
 
 Bruk:
     export ANTHROPIC_API_KEY=...

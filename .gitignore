@@ -5,7 +5,7 @@
 .env
 .env.*
 
-# Kildeobjektet: Vigelandsmuseets samling — ikke publisert her
+# Kildeobjektet: en museumssamling i Oslo — ikke publisert her
 *.pdf
 *.png
 *.jpg

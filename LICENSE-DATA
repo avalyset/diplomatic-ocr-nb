@@ -1,9 +1,13 @@
 Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-This license applies to the DATA and MEASUREMENTS in this repository:
-  data/       (fasit_n8.json, UTVALG.txt)
-  results/    (n8_eksplorativ.tsv, aggregat.json, forvekslinger_baseline.tsv,
-               troskap.tsv)
+This license applies to the DATA, MEASUREMENTS, and PROSE DOCUMENTATION in
+this repository:
+  data/        (fasit_n8.json, UTVALG.txt)
+  results/     (n8_eksplorativ.tsv, aggregat.json, forvekslinger_baseline.tsv,
+                troskap.tsv)
+  *.md         (README.md, METODE.md)
+  docs/        (the ADR decision records under docs/decisions/)
+  litteratur/  (the literature notes)
 
 The source code (src/) is licensed separately under the MIT License; see LICENSE.
 
@@ -29,7 +33,7 @@ The full legal code is available at:
   https://creativecommons.org/licenses/by/4.0/legalcode
 
 NOTE ON THE SOURCE OBJECT: The transcribed diary text in data/fasit_n8.json
-consists of eight pages from a typescript held in the collection of the
-Vigeland Museum (Vigelandsmuseet), Oslo. Publication of the page images
+consists of eight pages from a typescript held in a museum collection in
+Oslo. Publication of the page images
 themselves is subject to separate clearance with the institution and is not
 covered here. See docs/decisions/ADR-009.

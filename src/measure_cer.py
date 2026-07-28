@@ -16,7 +16,7 @@ identiske tall hver gang. Baseline (rå tesseract-OCR i txt/) reproduserer
 results/aggregat.json -> "baseline" nøyaktig.
 
 Hypotesefilene (rå OCR / vision-utskrift) og sidebildene er IKKE en del av
-dette repoet — objektet tilhører Vigelandsmuseets samling. Tallene i results/
+dette repoet — objektet tilhører en museumssamling i Oslo. Tallene i results/
 er utledet av dem. Kjør selv ved å peke --hyp-dir mot din egen kopi.
 
 Bruk:

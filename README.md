@@ -51,7 +51,7 @@ results/
 ## Reprodusere
 
 Hypotesefilene (rå OCR, vision-utskrift) og sidebildene er **ikke** i repoet
-— objektet tilhører Vigelandsmuseets samling (se *Omfang* under). Tallene i
+— objektet tilhører en museumssamling i Oslo (se *Omfang* under). Tallene i
 `results/` er utledet av dem. Med din egen kopi av hypotesene:
 
 ```bash
