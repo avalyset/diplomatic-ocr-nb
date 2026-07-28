@@ -12,18 +12,20 @@ Bibliografiske data er verifisert **fra dokumentet** (eller fra Crossref/ACL Ant
 
 | # | Påstand | Bærende kilde(r) | Styrke |
 |---|---------|------------------|--------|
-| 1 | Referansefri QE er et etablert felt, ikke et hull | **Sindhujan et al. 2025** (Information 16(10):916); **Kocmi & Federmann 2023** (GEMBA-MQM, WMT23); **Moon et al. 2020**; **Agrawal et al. 2022** | Sterk — flere fagfellevurderte kilder, egen delt oppgave (WMT QE), definisjonen står ordrett |
+| 1 | Referansefri QE er et etablert felt, ikke et hull | **Sindhujan et al. 2025** (Information 16(10):916, i et **QE-temanummer**); **Kocmi & Federmann 2023** (GEMBA-MQM, WMT23); **Moon et al. 2020**; **Agrawal et al. 2022** | **Uangripelig** — flere fagfellevurderte kilder, egen delt oppgave (WMT QE), *et helt temanummer* viet QE (2025), definisjonen står ordrett |
 | 2 | RTT med BLEU er svak; med semantiske embeddinger brukbar | **Moon et al. 2020** (primær); **Agrawal et al. 2022** (korroborerer + modererer) | Sterk på «BLEU svak»; **betinget** på «brukbar»: embeddinger løfter RTT, men Agrawal viser at BT alene fortsatt er *dårligere enn veiledet QE* og bare komplementerer det |
 | 3 | Modernisering av historisk ortografi med nevrale modeller er etablert | **Tang et al. 2018** (COLING); **Bollmann 2019** (NAACL, «largest study»); **Ciambella 2024** (intralingval, AI) | Sterk — men med nyansen «no consensus on state-of-the-art» (Bollmann), og retningen er *normalisering*, motsatt av diplomatarisk bevaring |
 | 4 | Kritisk apparat lar seg ennå ikke produsere automatisk | **Terras et al. 2024** (Scholarly Editing 41) | Middels-sterk, men **avgrenset**: gjelder HTR-plattformer «so far», rammet som nåværende hull med fremtidig mulighet — ikke prinsipiell umulighet |
 | 5 | Sikkerhetsfiltre gir utransklaterte partier i historiske manuskripter | **Tekgürler 2025** (arXiv 2503.11898) — *funnet i Del B* | Tynn, men non-empty: ett tallfestet tilfelle (Gemini flagget 14–23 % av et 1700-talls manuskript), interlingval, ikke OCR |
 
+**Referanse-/prøvesteinskilde:**
+- **Ataman et al. 2025** (Information 16(9):723) — bred MT-survey i LLM-æraen, signert feltets tyngste (Koehn: Moses + standardverket om SMT; Cho: encoder–decoder-arkitekturen). **Ikke bare bakgrunn:** den naturlige «slik står feltet nå»-referansen og prøvesteinen for egne nyhetspåstander. Dens §5 «Current and Emerging Problems» korroborerer B1-negativfunnet (se under).
+
 **Kontekstkilder (forankrer ingen av de fem, ført ærlig som bakgrunn):**
-- **Ataman et al. 2025** (Information 16(9):723) — bred MT-survey i LLM-æraen; rammeverk for «hvilke problemer er løst / åpne».
 - **Riley et al. 2025** (arXiv 2510.24664) — MQM re-annotering; bakgrunn for evalueringsparadigmet GEMBA automatiserer.
 - **Kutuzov et al. 2022** (NorDiaChange, LREC) — diakronisk semantisk endring for norsk; nordisk historisk-NLP finnes, men rører ikke tekstetablering.
 
-**Tilgang i Del A:** de to MDPI-artiklene (Sindhujan, Ataman) er **åpen tilgang (CC-BY)**, men MDPI-serveren avviste automatisert henting (HTTP 403 / Cloudflare-utfordring). Dette er en **teknisk** blokkering, ikke betalingsmur; bib + abstract er hentet fra Crossref, og PDF-ene bør lastes ned manuelt. Alle øvrige åtte PDF-er ligger i mappen.
+**Tilgang i Del A:** de to MDPI-artiklene (Sindhujan, Ataman) er åpen tilgang (CC-BY). MDPI-serveren avviste automatisert henting (HTTP 403 / Cloudflare) i første omgang, så bib ble midlertidig hentet fra Crossref. **Oppdatert:** begge PDF-ene er nå skaffet (lå på skrivebordet, kopiert md5-verifisert til mappen), og bibliografien er **verifisert fra dokumentets s. 1** — se notatene (v1.1). Ett forbehold står igjen: **temanummer-navnet er ikke trykt i PDF-ene** (kun på tidsskriftets utgavesider, som er blokkert), så de oppgitte temanumrene er ikke dokumentbekreftet. Alle ti PDF-er ligger nå i mappen.
 
 ---
 
@@ -36,7 +38,9 @@ Ingen CL/NLP-arbeid funnet som behandler maskinell bevaring eller generering av 
 - *Inline-markup for lokalisering* (se B4) — behandler formattagger, ikke apparat-semantikk.
 - **Terras et al. 2024** — sier eksplisitt at apparat *ikke* fasiliteres av dagens plattformer.
 
-→ **Apparat-integritet er et reelt hull.** Fraværet er ikke bevis for at ingen har tenkt tanken, men et systematisk søk på de mest relevante stedene ga ingen treff på oppgaven «bevar apparatlaget gjennom maskinell tekstbehandling».
+**Korroborert fra autoritativt hold:** ordsøk i hele **Ataman et al. 2025**-surveyen (feltets tyngste, se over) gir «markup» = 0, «apparatus» = 0, «editorial» = 0, «lacuna» = 0, «footnote» = 0. Dens §5 «Current and Emerging Problems» (s. 16–20) fører lavressursspråk, evaluering og hallusinasjon/**utelatelse** som sentrale åpne problemer, men nevner ikke med ett ord bevaring av apparat, markup, lakuner eller dokumentstruktur («structure» forekommer kun i lingvistisk forstand). Utelatelse behandles der kun som en *hallusinasjonstype* i MT mellom språk, ikke som en integritetsegenskap ved en kildeutgave.
+
+→ **Apparat-integritet er et reelt hull.** Når feltets ledende survey ikke nevner det blant sine åpne problemer, er fraværet et sterkt signal — ikke et oversett hjørne.
 
 ### B2. Omission / hallucination detection i MT — **etablert (relevant for dropout, ikke apparat)**
 - **«HalOmi: A Manually Annotated Benchmark for Multilingual Hallucination and Omission Detection in Machine Translation»**, EMNLP 2023, ACL `2023.emnlp-main.42`. — Relevans: **omission-deteksjon** er et etablert felt; parallelt til vår ordantall-port som fanget dropout, men gjelder MT mellom språk, ikke tekst-luker i kilde.
@@ -72,6 +76,6 @@ Ingen CL/NLP-arbeid funnet som behandler maskinell bevaring eller generering av 
 
 ## Leveranse i `litteratur/`
 
-**PDF-er (åpen tilgang, 10 stk):** Moon 2020, Agrawal 2022, Kocmi 2023, Tang 2018, Bollmann 2019, Ciambella 2024, Terras 2024, Kutuzov 2022, Riley 2025, Tekgürler 2025.
-**Notatfiler (12 stk):** de ti over + Sindhujan 2025 og Ataman 2025 (MDPI — bib/abstract fra Crossref, PDF teknisk blokkert).
-**Blokkert:** Karas 2024 (betalingsmur).
+**PDF-er (åpen tilgang, 12 stk):** Moon 2020, Agrawal 2022, Kocmi 2023, Tang 2018, Bollmann 2019, Ciambella 2024, Terras 2024, Kutuzov 2022, Riley 2025, Tekgürler 2025, **Sindhujan 2025 og Ataman 2025** (MDPI — nå skaffet, md5-verifisert, bib fra dokumentet).
+**Notatfiler (12 stk):** én per kilde. Sindhujan og Ataman oppdatert til **v1.1** (dokumentverifisert bib; v1.0 fjernet, historikk i git).
+**Blokkert:** Karas 2024 (betalingsmur). Temanummer-navnene for de to MDPI-artiklene er ikke dokumentbekreftet (tidsskriftets utgavesider er blokkert).
