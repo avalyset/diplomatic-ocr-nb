@@ -22,7 +22,8 @@ helst historisk korpus. Se [`METODE.md`](METODE.md).
 **Case 2 (Vigeland, *Erindringer* 1918)** føyer til et materiale *uten* fasit —
 en transkripsjon fra 1949 av et håndskrevet manuskript — der troskap
 overvåkes med populasjonsdekkende porter på alle sider i stedet for
-stikkprøve-CER (ö/ø 5201/14), arkmerket brukes som data mot aritmetikk, og
+stikkprøve-CER (rå OCR ö/ø 5161/19, 4 ekte brödtekst-ø), arkmerket brukes som
+data mot aritmetikk, og
 tomrom-luker klassifiseres med falsifisering, revalidering på usett data og en
 utraderingstest. Se [`METODE.md` § Case 2](METODE.md).
 

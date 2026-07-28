@@ -191,13 +191,27 @@ En metode som er trofast på gjennomsnittet kan kollapse på én side, og CER p�
 et tilfeldig utvalg vil sannsynligvis aldri se den.
 
 Derfor: tre deterministiske porter på **alle 287 sider**, ikke et estimat på
-et utvalg. Flagg, aldri rett.
+et utvalg. Flagg, aldri rett. Tallene i tabellen er på **rå OCR** — den
+utskriften portene overvåker, før dedup og modernisering.
 
-| port | Case 2 (287 sider) | Case 1 til sammenligning |
+| port | Case 2 — Vigeland, rå OCR (287 sider) | Case 1 — Aars, produksjon (114 sider, ADR-010) |
 |--|--|--|
-| **a — ö/ø per side** | ö = 5201, ø = 14 på 6 sider (hver ø inspisert) | ö = 71, ø = 0 — men på 8 sider |
-| **b — ordantall mot komparator** (< 60 %) | 2 sider ny-dropout; 97 ark gammel-dropout | ikke kjørt (fasit fantes) |
+| **a — ö/ø** | ö = 5161, ø = 19; men 15 ø ligger i OCR-avslags-/håndskrift-metatekst — **4 ekte brödtekst-ø** (ark 204, 163, 235) | ö = 1081, ø = 5 (ø-andel 0,46 %) |
+| **b — ordantall mot komparator** (< 60 %) | 2 sider ny-dropout; 97 ark gammel-dropout | ikke kjørt |
 | **c — garble-markører** | 4 vokalløse ord, 0 ord > 25 tegn, 2 gjentatte linjer, 86 uventede tegn (mest aksenter) | ikke kjørt |
+
+**Hvilket sett hvert tall stammer fra.** Aars-kolonnen er *produksjonen* (114
+sider), ikke blindfasit-settet. Fasit-tallet ö = 71 / ø = 0 gjelder de **8
+tilfeldig trukne sidene metoden ble valgt på** (§4) og skal ikke settes mot et
+populasjonstall — å måle 287 sider mot 8 er nettopp feilen seksjonen advarer
+mot. Produksjon mot produksjon: 1081/5 (Aars, 114 sider) og 5161/19 (Vigeland,
+287 sider, rå OCR).
+
+**Vigeland gjennom stadiene** (ö/ø): rå OCR 5161/19 → manusström etter dedup,
+med dublett-ark og avslagssider ute, 5094/4 → ferdig EPUB inkl. kolofon
+5095/11 (kolofonen er moderne bokmål og bidrar med ø). De 4 ekte brödtekst-ø
+overlever hele veien; de 15 øvrige forsvinner med avslagssidene, **ikke ved
+retting**.
 
 Porten er ikke et kvalitetstall, men et *filter*: den løfter hver avvikende
 side til øyet i stedet for å love at snittet er godt. Til kontrast hadde det
@@ -282,9 +296,10 @@ utradering. Tomrommene er luker.
 ## 2.7 Ærlige begrensninger (Case 2)
 
 - **Ingen målt CER.** Ingen fasit finnes for Vigeland, og ingen kan skrives.
-  Troskapen hviler på portene og ö/ø-forholdet (5201 / 14), ikke på en
-  referanse. Dette er **svakere bevis** enn Case 1s blindmåling og skal leses
-  som det: fravær av flagg er ikke det samme som en målt feilrate.
+  Troskapen hviler på portene og ö/ø-forholdet i manuskript-brödteksten
+  (5094 ö / 4 ø etter dedup; rå OCR fanget 19 ø, men 15 var avslagsmetatekst),
+  ikke på en referanse. Dette er **svakere bevis** enn Case 1s blindmåling og
+  skal leses som det: fravær av flagg er ikke det samme som en målt feilrate.
 - **n = 2 caser.** To materialer, ingen populasjon. Ingenting generaliseres
   fra to punkter.
 - **Luke-metoden lokaliserer bare brede gap automatisk.** Smale 2–3-tegns
