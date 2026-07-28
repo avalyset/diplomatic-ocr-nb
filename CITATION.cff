@@ -2,11 +2,15 @@ cff-version: 1.2.0
 message: "Hvis du bruker dette materialet, siter det slik:"
 title: "Diplomatarisk troskap i OCR av norsk typoskript"
 abstract: >-
-  Blindvalidert metodesammenligning: hvor trofast kan ulike OCR-metoder
-  gjengi et norsk typoskript fra 1920-årene (riksmål med ö) uten stille å
-  modernisere det? Fire metoder målt mot en menneskeskrevet blindfasit på
-  åtte tilfeldig trukne sider, med en måleprotokoll for diplomatarisk troskap
-  (ö/ø-rate og arkaisk bevaringsratio).
+  Metodenotis med to caser om diplomatarisk troskap i OCR av norsk historisk
+  materiale (riksmål med ö). Case 1 (Aars): blindvalidert sammenligning av
+  fire OCR-metoder mot en menneskeskrevet fasit på åtte tilfeldig trukne
+  sider, med en måleprotokoll for diplomatarisk troskap (ö/ø-rate og arkaisk
+  bevaringsratio). Case 2 (Vigeland): en kildeutgave uten fasit, der troskap
+  overvåkes med populasjonsdekkende porter på alle sider i stedet for
+  stikkprøve-CER — ö/ø, ordantall mot komparator, garble — pluss arkmerket som
+  data, anførselstegn som port mot retting, og luke-klassifisering med
+  falsifisering, revalidering på usett data og en utraderingstest.
 type: software
 authors:
   - family-names: Nicolaysen
@@ -24,5 +28,7 @@ keywords:
   - historisk tekst
   - blindprotokoll
   - CER
-version: 0.1.0
-date-released: 2026-07-17
+  - kildeutgave
+  - populasjonsdekkende porter
+version: 0.2.0
+date-released: 2026-07-28

@@ -5,6 +5,12 @@ Det som *er* målt, ingenting mer. Alle tall er reproduserbare fra
 `results/aggregat.json → baseline` nøyaktig (bit for bit), noe som
 forankrer resten.
 
+Dokumentet dekker to caser. **Case 1 — Aars** (seksjon 1–8) er blindvalidert
+med CER mot en menneskeskrevet fasit og står uendret. **Case 2 — Vigeland**
+(nederst) er et materiale *uten* fasit; det føyer til det som faktisk skiller
+casene og hviler på andre kontroller enn CER. Ingen sidebilder, intet bokmanus
+og ingen redaksjonshistorie ligger i dette repoet — bare tallene og eksemplene.
+
 ---
 
 ## 1. Objektet
@@ -151,3 +157,137 @@ utførelsen (kode skrevet med Claude Code). Fasiten er skrevet av et menneske
 
 Author/committer: Eirik Botten Nicolaysen. `Co-authored-by`-trailer der Claude
 Code skrev kode.
+
+---
+
+# Case 2 — Vigeland: *Erindringer* (1918)
+
+Samme spørsmål — diplomatarisk troskap — men et materiale som fjerner
+grunnlaget for målemetoden i Case 1. Det som følger er hva forskjellen tvang
+frem, og hva som er nytt. Utgaven selv (287 sider, ~128 000 ord) hører til
+andre steder; her står bare tallene og eksemplene som skiller casene.
+
+## 2.1 Ulik kildetype — og hva den tvinger frem
+
+Case 1 er et typoskript med **kjent forelegg** (Aars' egen håndskrift) og en
+**etablert blindfasit**. Case 2 er ett ledd lenger unna: en maskinskrevet
+**transkripsjon fra 1949 av Vigelands håndskrevne manuskript**. Avskriveren —
+ikke forfatteren — er den siste hånden på teksten, forelegget er ikke
+tilgjengelig, og **ingen fasit finnes eller kan skrives** (å skrive en fasit
+ville kreve nettopp den håndskriften avskriveren allerede tapte partier av).
+
+Konsekvensen for metodevalg er absolutt: CER mot fasit er umulig. Troskap kan
+ikke *måles mot en referanse*; den kan bare *overvåkes mot kildens egne
+interne holdepunkter* — ö/ø-forholdet, ordantall mot en komparator,
+arkmerkene, og kildens egen luke-konvensjon. Case 1 velger metode med et tall.
+Case 2 må vokte en produksjon uten et slikt tall.
+
+## 2.2 Populasjonsdekkende porter, ikke stikkprøve-CER
+
+CER er riktig verktøy når **metoden velges**: Case 1 målte fire metoder på åtte
+sider og fikk 5,35 % for vinneren. Det er feil verktøy når **produksjonen
+overvåkes**: en stikkprøve på 8 av 287 sider sier ingenting om de 279 andre.
+En metode som er trofast på gjennomsnittet kan kollapse på én side, og CER på
+et tilfeldig utvalg vil sannsynligvis aldri se den.
+
+Derfor: tre deterministiske porter på **alle 287 sider**, ikke et estimat på
+et utvalg. Flagg, aldri rett.
+
+| port | Case 2 (287 sider) | Case 1 til sammenligning |
+|--|--|--|
+| **a — ö/ø per side** | ö = 5201, ø = 14 på 6 sider (hver ø inspisert) | ö = 71, ø = 0 — men på 8 sider |
+| **b — ordantall mot komparator** (< 60 %) | 2 sider ny-dropout; 97 ark gammel-dropout | ikke kjørt (fasit fantes) |
+| **c — garble-markører** | 4 vokalløse ord, 0 ord > 25 tegn, 2 gjentatte linjer, 86 uventede tegn (mest aksenter) | ikke kjørt |
+
+Porten er ikke et kvalitetstall, men et *filter*: den løfter hver avvikende
+side til øyet i stedet for å love at snittet er godt. Til kontrast hadde det
+gamle EPUB-korpuset (port c, runde 1) 286 vokalløse ord i Del 3 og 357
+gjentatte linjer i Del 4 — porten skiller de to kvalitetsklassene skarpt.
+
+## 2.3 Den forkastede OCR-runden som diagnostisk instrument
+
+Et eldre EPUB-korpus (tidligere OCR) var **ubrukelig som lesetekst** —
+massivt teksttap, gjentatte avsnitt, korrupt tegnsetting. Det ble ikke brukt
+som tekst. Men brukt som **komparator** i port b avdekket det dropout i begge
+retninger: **97 ark** der den gamle hadde tapt tekst (ytterpunkt ark 113: ny
+459 ord mot gammel 15 = 30,6×; ark 95: 21×), og **2 ark** der den nye OCR-en
+slapp. Uten en uavhengig andre-måling ville ny-dropout på de to arkene ikke
+hatt noe å slå ut mot.
+
+Prinsipp: **kast aldri den dårlige transkripsjonen.** En verdiløs tekst er
+fremdeles en uavhengig måling. Dens verdi lå ikke i ordene, men i at den var
+laget separat og derfor kunne krysse den nye.
+
+## 2.4 Arkmerket som data
+
+Side↔ark ble rekonstruert fra de **trykte arkmerkene** i typoskriptet
+(`- 93 -`, `— 93 —`, `258 a`), ikke fra aritmetikk (sidenummer + offset).
+Merkene fanget det aritmetikken ikke kunne:
+
+- **Drift** — en innskutt skannside (avslagstekst, ikke et nummerert ark) ga
+  −1-forskyvning i resten av en del; merket, ikke telleren, avslørte det.
+- **Innskutte a-ark** — 221a og 258a, ark uten eget heltallsnummer.
+- **Falmede dubletter** — samme ark skannet to ganger: ark 115 (99,6 %
+  identisk tekst), 226 (99,5 %), 258a (93,7 %). Aritmetikk teller dem som to.
+- **Feiltelt hale** — runde 1s antatte «271–279» (ni numre på åtte sider) var
+  en aritmetikkfeil; halen er 272–279, én-til-én, og **intet ark mangler**.
+
+Hver gang aritmetikk og arkmerke var i konflikt, tok **aritmetikken feil**.
+De reelle hullene (ark 172, defekt OCR-fil med skann i behold; ark 266,
+nummerhopp) ble stående som luker nettopp fordi merkene, ikke tellingen,
+avgjorde dem.
+
+## 2.5 Kilden markerer sin egen stemme
+
+Teksten har to lag som ikke skal blandes: **Vigelands tekst** (1. person,
+«jeg husker …») og **transkripsjonens apparat** (redaksjonelt, tredje-
+person/imperativ: «(I margen: flyttes frem.)»). De skilles på grammatisk
+person og parentes-notasjon — et strukturelt signal i kilden selv, ikke en
+skjønnsvurdering — og apparatet moderniseres aldri.
+
+**Anførselstegn er en hard port mot retting:** et ord i anførsel er sitat
+eller navn og røres ikke, uansett hvor «feil» det ser ut. Eksempel:
+**«Tarrisken»** — et økenavn som spiller på «ta risken». En plausibilitets-
+eller stavekorrektur ville delt det til to ord; anførselsporten forbyr det,
+og navnet står. Kilden vet forskjellen på sin egen stemme og en feil; oppgaven
+er å høre etter, ikke å overprøve.
+
+## 2.6 Luke-klassifisering: falsifisering og revalidering
+
+151 tomrom-luker i typoskriptet ble delt i **belagt** (ekte luke der
+avskriveren ikke kunne tyde forelegget → merkes `[…]`) og **ubelagt** (rent
+skrivemaskin-mellomrom → kollapser).
+
+- **Opprinnelig kriterium** — belagt kun på snevre syntaktiske signaler
+  (anførsel, manglende ord foran tegnsetting, preposisjon foran); resten
+  antatt skrivemaskin.
+- **Stikkprøven som felte det** — 10 tilfeldige fra den *ubelagte* gruppen
+  lest mot sidebildet: **4 av 10 var ekte luker**. Kriteriet forkastet.
+- **Revidert kriterium** — kun gap rett etter setningsslutt (`.`/`!`/`?`) *og*
+  fulgt av stor forbokstav regnes som skrivemaskin; alt annet er belagt.
+  Resultat: **93 belagt / 58 ubelagt**.
+- **Revalidering på usett data** — 10 nye trukket fra de gapene som flyttet
+  til belagt, lest mot bilde. Tre av de ti var allerede sett i den første
+  stikkprøven, så **effektiv usett n = 7, ikke 10**. **7 av 7 var ekte luker.**
+
+**Utraderingstest** (er tomrommene utraderinger, ikke luker?): på et utvalg
+sider ble **50 gap** kontrastforsterket (normalisering, gamma, R/G/B-kanaler,
+høypass) og målt mot en kontroll — interlinjen i samme kolonne, som fanger
+papir og gjennomslag men aldri har hatt tekst. **50 av 50: ingen spor.**
+Tolkningens grunnlag: en mekanisk utradering **lysner** — den sliper
+papiroverflaten — mens gjennomslag og avsmitting **mörkner**. Sporene som
+fantes i gapene var mörke (gjennomslag), aldri den lysende signaturen på
+utradering. Tomrommene er luker.
+
+## 2.7 Ærlige begrensninger (Case 2)
+
+- **Ingen målt CER.** Ingen fasit finnes for Vigeland, og ingen kan skrives.
+  Troskapen hviler på portene og ö/ø-forholdet (5201 / 14), ikke på en
+  referanse. Dette er **svakere bevis** enn Case 1s blindmåling og skal leses
+  som det: fravær av flagg er ikke det samme som en målt feilrate.
+- **n = 2 caser.** To materialer, ingen populasjon. Ingenting generaliseres
+  fra to punkter.
+- **Luke-metoden lokaliserer bare brede gap automatisk.** Smale 2–3-tegns
+  belagte gap skilles ikke fra vanlig setningsmellomrom ved skann-
+  oppløsningen og må sjekkes for hånd. Utraderingstestens «50 av 50» gjelder
+  det maskinelt lokaliserbare utvalget, ikke alle 93 belagte gap.

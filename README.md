@@ -19,6 +19,13 @@ innen året), men **måleprotokollen for diplomatarisk troskap**: ö/ø-rate og
 arkaisk bevaringsratio, brukbar på hvilken som helst modell og hvilket som
 helst historisk korpus. Se [`METODE.md`](METODE.md).
 
+**Case 2 (Vigeland, *Erindringer* 1918)** føyer til et materiale *uten* fasit —
+en transkripsjon fra 1949 av et håndskrevet manuskript — der troskap
+overvåkes med populasjonsdekkende porter på alle sider i stedet for
+stikkprøve-CER (ö/ø 5201/14), arkmerket brukes som data mot aritmetikk, og
+tomrom-luker klassifiseres med falsifisering, revalidering på usett data og en
+utraderingstest. Se [`METODE.md` § Case 2](METODE.md).
+
 ## Struktur
 
 ```
