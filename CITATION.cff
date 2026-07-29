@@ -17,6 +17,14 @@ authors:
     given-names: Eirik Botten
     orcid: "https://orcid.org/0009-0001-9188-6788"
 repository-code: "https://github.com/avalyset/diplomatic-ocr-nb"
+doi: "10.5281/zenodo.21679144"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21679144"
+    description: "Zenodo — citable archived release (v0.2.0)"
+  - type: doi
+    value: "10.17605/OSF.IO/VWA2Q"
+    description: "OSF — identical deposit (mirror)"
 license:
   - MIT
   - CC-BY-4.0
@@ -42,7 +50,7 @@ references:
         given-names: Harald
   - type: book
     title: "Harald Aars: Dagbøker, bind II"
-    isbn: "978-82-694238-7-8"
+    isbn: "978-82-694238-7-7"
     authors:
       - family-names: Aars
         given-names: Harald

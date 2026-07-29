@@ -83,4 +83,10 @@ uavklart og står som en åpen luke.
 
 ## Sitering
 
-Se [`CITATION.cff`](CITATION.cff).
+Siterbar DOI (arkivert utgivelse v0.2.0):
+**[10.5281/zenodo.21679144](https://doi.org/10.5281/zenodo.21679144)** (Zenodo).
+
+Speil (identisk avlevering) på OSF: [10.17605/OSF.IO/VWA2Q](https://doi.org/10.17605/OSF.IO/VWA2Q).
+Preregistrering (supplement): [10.17605/OSF.IO/6J4M5](https://doi.org/10.17605/OSF.IO/6J4M5).
+
+Se [`CITATION.cff`](CITATION.cff) for fullstendige metadata.
