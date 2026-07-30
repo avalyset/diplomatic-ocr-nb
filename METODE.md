@@ -1,5 +1,9 @@
 # METODE
 
+Engelsk motstykke: `METHOD.md`. De to er **ekvivalente, ikke sammendrag av
+hverandre**: hver seksjon, tabell, tall og forbehold i det ene har sin match i
+det andre. Avvik mellom halvdelene er en feil og føres i funnregisteret.
+
 Det som *er* målt, ingenting mer. Alle tall er reproduserbare fra
 `src/measure_cer.py` mot `data/fasit_n8.json`. Baseline reproduserer
 `results/aggregat.json → baseline` nøyaktig (bit for bit), noe som
@@ -200,6 +204,15 @@ utskriften portene overvåker, før dedup og modernisering.
 | **b — ordantall mot komparator** (< 60 %) | 2 sider ny-dropout; 97 ark gammel-dropout | ikke kjørt |
 | **c — garble-markører** | 4 vokalløse ord, 0 ord > 25 tegn, 2 gjentatte linjer, 86 uventede tegn (mest aksenter) | ikke kjørt |
 
+>
+> **Korreksjonsnotat 2026-07-30.** Tallet `5161/19` lar seg ikke reprodusere fra
+> `tekst/` slik katalogen står i dag. Talt på nytt: alle 287 sidefiler gir
+> **5153/14**; de 280 sidene som faktisk går inn i manusstrømmen gir **5094/4**.
+> De to senere stadiene under (5094/4 og 5095/11) reproduserer eksakt. Det er
+> **ikke fastslått** hva 5161/19 ble målt på — trolig en OCR-tilstand fra før
+> rettelsescommitene, men det er en hypotese, ikke et funn. Ført som åpen
+> (F-14 i korpusprosjektets funnregister).
+
 **Hvilket sett hvert tall stammer fra.** Aars-kolonnen er *produksjonen* (114
 sider), ikke blindfasit-settet. Fasit-tallet ö = 71 / ø = 0 gjelder de **8
 tilfeldig trukne sidene metoden ble valgt på** (§4) og skal ikke settes mot et
@@ -283,6 +296,16 @@ skrivemaskin-mellomrom → kollapser).
 - **Revalidering på usett data** — 10 nye trukket fra de gapene som flyttet
   til belagt, lest mot bilde. Tre av de ti var allerede sett i den første
   stikkprøven, så **effektiv usett n = 7, ikke 10**. **7 av 7 var ekte luker.**
+
+>
+> **Korreksjonsnotat 2026-07-30.** Tallene `93 / 58` reproduserer ikke. Talt på
+> nytt på manusstrømmen: **160** tomrom-gap → **98 belagt / 62 ubelagt**. Med
+> samme apparat-stashing som moderniseringssteget gjør først: **155** gap →
+> **93 belagt / 62 ubelagt**. Belagt-tallet 93 reproduserer altså for
+> lesestrømmen, men ubelagt-tallet er **62**, ikke 58, og totalen er 155 (eller
+> 160 på rå tekst), ikke 151. Differansen 98 − 93 er nøyaktig de fem gapene som
+> ligger *inni* `(( ))`-apparatpartier. Hva som ga 58 og 151 er ikke fastslått.
+> Ført som åpen (F-15).
 
 **Utraderingstest** (er tomrommene utraderinger, ikke luker?): på et utvalg
 sider ble **50 gap** kontrastforsterket (normalisering, gamma, R/G/B-kanaler,
