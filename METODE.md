@@ -205,13 +205,27 @@ utskriften portene overvåker, før dedup og modernisering.
 | **c — garble-markører** | 4 vokalløse ord, 0 ord > 25 tegn, 2 gjentatte linjer, 86 uventede tegn (mest aksenter) | ikke kjørt |
 
 >
-> **Korreksjonsnotat 2026-07-30.** Tallet `5161/19` lar seg ikke reprodusere fra
-> `tekst/` slik katalogen står i dag. Talt på nytt: alle 287 sidefiler gir
-> **5153/14**; de 280 sidene som faktisk går inn i manusstrømmen gir **5094/4**.
-> De to senere stadiene under (5094/4 og 5095/11) reproduserer eksakt. Det er
-> **ikke fastslått** hva 5161/19 ble målt på — trolig en OCR-tilstand fra før
-> rettelsescommitene, men det er en hypotese, ikke et funn. Ført som åpen
-> (F-14 i korpusprosjektets funnregister).
+> **ERRATUM 2026-07-30 — ö/ø på rå OCR.** Tallet `5161/19` **lar seg ikke
+> reprodusere** fra `tekst/` slik katalogen står i dag.
+>
+> | måling | ö | ø |
+> |---|---:|---:|
+> | alle 287 sidefiler i `tekst/` | 5 153 | 14 |
+> | de 280 sidene som faktisk går inn i manusstrømmen | 5 094 | 4 |
+> | manusstrøm etter dedup *(publisert tall, reproduserer)* | 5 094 | 4 |
+> | ferdig EPUB inkl. kolofon *(publisert tall, reproduserer)* | 5 095 | 11 |
+>
+> De to senere stadiene reproduserer eksakt. Det første gjør det ikke.
+>
+> **Hva 5161/19 ble målt på er ikke fastslått, og er ikke gjettet.** En
+> nærliggende hypotese er en OCR-tilstand fra før rettelsescommitene, men det
+> er en hypotese, ikke et funn, og føres ikke som en. Tallet står derfor i
+> teksten som publisert, med dette forbeholdet.
+>
+> Merk også hva raden viser: ö-tallet er **identisk** før og etter
+> modernisering (5 094 begge steder). Det er ventet — moderniseringen rører
+> aldri ö — men det betyr at ö/ø-porten virker **mellom OCR og manusstrøm**,
+> ikke etter.
 
 **Hvilket sett hvert tall stammer fra.** Aars-kolonnen er *produksjonen* (114
 sider), ikke blindfasit-settet. Fasit-tallet ö = 71 / ø = 0 gjelder de **8
@@ -281,7 +295,7 @@ er å høre etter, ikke å overprøve.
 
 ## 2.6 Luke-klassifisering: falsifisering og revalidering
 
-151 tomrom-luker i typoskriptet ble delt i **belagt** (ekte luke der
+155 tomrom-luker i typoskriptet ble delt i **belagt** (ekte luke der
 avskriveren ikke kunne tyde forelegget → merkes `[…]`) og **ubelagt** (rent
 skrivemaskin-mellomrom → kollapser).
 
@@ -292,20 +306,34 @@ skrivemaskin-mellomrom → kollapser).
   lest mot sidebildet: **4 av 10 var ekte luker**. Kriteriet forkastet.
 - **Revidert kriterium** — kun gap rett etter setningsslutt (`.`/`!`/`?`) *og*
   fulgt av stor forbokstav regnes som skrivemaskin; alt annet er belagt.
-  Resultat: **93 belagt / 58 ubelagt**.
+  Resultat: **93 belagt / 62 ubelagt**. *(Rettet 2026-07-30 fra «58»; se
+  erratumnotatet under.)*
 - **Revalidering på usett data** — 10 nye trukket fra de gapene som flyttet
   til belagt, lest mot bilde. Tre av de ti var allerede sett i den første
   stikkprøven, så **effektiv usett n = 7, ikke 10**. **7 av 7 var ekte luker.**
 
 >
-> **Korreksjonsnotat 2026-07-30.** Tallene `93 / 58` reproduserer ikke. Talt på
-> nytt på manusstrømmen: **160** tomrom-gap → **98 belagt / 62 ubelagt**. Med
-> samme apparat-stashing som moderniseringssteget gjør først: **155** gap →
-> **93 belagt / 62 ubelagt**. Belagt-tallet 93 reproduserer altså for
-> lesestrømmen, men ubelagt-tallet er **62**, ikke 58, og totalen er 155 (eller
-> 160 på rå tekst), ikke 151. Differansen 98 − 93 er nøyaktig de fem gapene som
-> ligger *inni* `(( ))`-apparatpartier. Hva som ga 58 og 151 er ikke fastslått.
-> Ført som åpen (F-15).
+> **ERRATUM 2026-07-30 — lukketallene.** Publisert versjon oppga
+> «93 belagt / 58 ubelagt», total 151. **Ubelagt-tallet var feil.**
+>
+> Talt på nytt i kode mot manusstrømmen (`skript/kjerne.py`, samme
+> gap-kriterium som moderniseringssteget bruker):
+>
+> | måling | gap | belagt | ubelagt |
+> |---|---:|---:|---:|
+> | rå manusstrøm | 160 | **98** | **62** |
+> | etter apparat-stashing (som `moderniser.py` gjør først) | 155 | **93** | **62** |
+>
+> Belagt-tallet **93 reproduserer** for lesestrømmen. Ubelagt-tallet er **62**,
+> ikke 58, og totalen er **155**, ikke 151. Teksten over er rettet.
+>
+> Differansen 98 − 93 er nøyaktig de **fem gapene som ligger inni
+> `(( ))`-apparatpartier**: moderniseringssteget stasher apparatet før det
+> teller, så de fem forsvinner inn i plassholderen. Begge tall er riktige for
+> sitt objekt — 98 = alle belagte luker, 93 = belagte luker i lesetekst.
+> **Oppgi derfor alltid hvilken flate tallet gjelder.**
+>
+> Hva som ga 58 og 151 er **ikke fastslått** og er ikke gjettet.
 
 **Utraderingstest** (er tomrommene utraderinger, ikke luker?): på et utvalg
 sider ble **50 gap** kontrastforsterket (normalisering, gamma, R/G/B-kanaler,

@@ -211,13 +211,27 @@ output the gates monitor, before de-duplication and modernisation.
 | **b — word count against comparator** (< 60 %) | 2 pages new-dropout; 97 sheets old-dropout | not run |
 | **c — garble markers** | 4 vowel-less words, 0 words > 25 characters, 2 repeated lines, 86 unexpected characters (mostly accents) | not run |
 
-> **Correction note, 2026-07-30.** The figure `5161/19` does not reproduce from
-> `tekst/` as the directory now stands. Recounted: all 287 page files give
-> **5153/14**; the 280 pages that actually enter the manuscript stream give
-> **5094/4**. The two later stages below (5094/4 and 5095/11) reproduce exactly.
-> It has **not** been established what 5161/19 was measured on — plausibly an OCR
-> state predating the correction commits, but that is a hypothesis, not a
-> finding. Recorded as open (F-14 in the corpus project's finding register).
+> **ERRATUM 2026-07-30 — ö/ø on raw OCR.** The figure `5161/19` **does not
+> reproduce** from `tekst/` as the directory now stands.
+>
+> | measurement | ö | ø |
+> |---|---:|---:|
+> | all 287 page files in `tekst/` | 5,153 | 14 |
+> | the 280 pages that actually enter the manuscript stream | 5,094 | 4 |
+> | manuscript stream after de-duplication *(published figure, reproduces)* | 5,094 | 4 |
+> | finished EPUB including colophon *(published figure, reproduces)* | 5,095 | 11 |
+>
+> The two later stages reproduce exactly. The first does not.
+>
+> **What 5161/19 was measured on is not established, and has not been guessed.**
+> A plausible hypothesis is an OCR state predating the correction commits, but
+> that is a hypothesis, not a finding, and is not recorded as one. The figure
+> therefore stands in the text as published, with this caveat.
+>
+> Note also what the row shows: the ö count is **identical** before and after
+> modernisation (5,094 in both). That is expected — modernisation never touches
+> ö — but it means the ö/ø gate operates **between OCR and manuscript stream**,
+> not after.
 
 **Which set each figure comes from.** The Aars column is *production* (114 pages),
 not the blind ground-truth set. The ground-truth figure ö = 71 / ø = 0 applies to
@@ -289,7 +303,7 @@ voice and an error; the task is to listen, not to overrule.
 
 ## 2.6 Lacuna classification: falsification and revalidation
 
-151 whitespace lacunae in the typescript were divided into **attested** (a genuine
+155 whitespace lacunae in the typescript were divided into **attested** (a genuine
 lacuna where the transcriber could not read the exemplar → marked `[…]`) and
 **unattested** (plain typewriter spacing → collapses).
 
@@ -300,20 +314,35 @@ lacuna where the transcriber could not read the exemplar → marked `[…]`) and
   against the page image: **4 of 10 were genuine lacunae**. Criterion rejected.
 - **Revised criterion** — only a gap directly after a sentence end (`.`/`!`/`?`)
   *and* followed by a capital letter counts as typewriter spacing; everything else
-  is attested. Result: **93 attested / 58 unattested**.
+  is attested. Result: **93 attested / 62 unattested**. *(Corrected 2026-07-30
+  from «58»; see the erratum note below.)*
 - **Revalidation on unseen data** — 10 new items drawn from the gaps that moved to
   attested, read against the image. Three of the ten had already been seen in the
   first sample, so **effective unseen n = 7, not 10**. **7 of 7 were genuine
   lacunae.**
 
-> **Correction note, 2026-07-30.** The counts `93 / 58` do not reproduce. Recounted
-> on the manuscript stream: **160** whitespace gaps → **98 attested / 62
-> unattested**. Applying the same apparatus-stashing the modernisation step
-> performs first: **155** gaps → **93 attested / 62 unattested**. The attested
-> figure 93 therefore reproduces for the reading stream, but the unattested figure
-> is **62**, not 58, and the total is 155 (or 160 on raw text), not 151. The
-> 98 − 93 difference is exactly the five gaps that lie *inside* `(( ))` apparatus
-> blocks. What produced 58 and 151 is not established. Recorded as open (F-15).
+> **ERRATUM 2026-07-30 — the lacuna counts.** The published version gave
+> «93 attested / 58 unattested», total 151. **The unattested figure was wrong.**
+>
+> Recounted in code against the manuscript stream (`skript/kjerne.py`, the same
+> gap criterion the modernisation step uses):
+>
+> | measurement | gaps | attested | unattested |
+> |---|---:|---:|---:|
+> | raw manuscript stream | 160 | **98** | **62** |
+> | after apparatus stashing (as `moderniser.py` does first) | 155 | **93** | **62** |
+>
+> The attested figure **93 reproduces** for the reading stream. The unattested
+> figure is **62**, not 58, and the total is **155**, not 151. The text above is
+> corrected.
+>
+> The 98 − 93 difference is exactly the **five gaps that lie inside `(( ))`
+> apparatus blocks**: the modernisation step stashes the apparatus before it
+> counts, so those five vanish into the placeholder. Both figures are correct for
+> their object — 98 = all attested lacunae, 93 = attested lacunae in reading text.
+> **Always state which surface a figure applies to.**
+>
+> What produced 58 and 151 is **not established** and has not been guessed.
 
 **Erasure test** (are the blanks erasures rather than lacunae?): on a selection of
 pages **50 gaps** were contrast-enhanced (normalisation, gamma, R/G/B channels,
