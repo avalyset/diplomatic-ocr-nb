@@ -27,6 +27,30 @@ data mot aritmetikk, og
 tomrom-luker klassifiseres med falsifisering, revalidering på usett data og en
 utraderingstest. Se [`METODE.md` § Case 2](METODE.md).
 
+## ⚠ Erratum
+
+**P-målet i apparatintegritet-skåringen er rettet.** `RESULTATER-apparat-2026-07-29`
+§ 1, tabellen for P (posisjonsmarkører), skal ikke siteres slik den står.
+
+Tallene skyldtes at posisjonsmarkørene var ført på feil kildesetning i korpuset —
+**24 av 119 var ført riktig**. Sitatmarkørene er ikke rammet (768 av 770 riktige):
+korpusbyggeren tilordner dem ved tekst og *verifiserer* tilordningen, mens
+posisjonsmarkørene tilordnes ved et tegnoffsett uten kontroll.
+
+**Dette står:** maskert reinnsetting bevarer apparatet bedre enn prompting.
+Q1 og Q2 for alle tre armer står som publisert.
+
+**Dette flytter seg:** påstanden om at lakunebevaring ikke lar seg verifisere ved
+setningsjustering er feil som formulert. Med riktig tilordning lander 82 av 83
+lakuner på arm 3. Den korrekte begrensningen gjelder elementer som spenner over
+setningsgrenser — 9 av 11 `(( ))`-blokker.
+
+Erratumet, begge språkversjoner:
+[**10.5281/zenodo.21716493**](https://doi.org/10.5281/zenodo.21716493) ·
+OSF-noden [`vwa2q`](https://osf.io/vwa2q/)
+
+---
+
 ## Struktur
 
 ```
