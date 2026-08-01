@@ -116,6 +116,18 @@ uavklart og står som en åpen luke.
 | speil, identisk avlevering (OSF-node) | [`10.17605/OSF.IO/VWA2Q`](https://doi.org/10.17605/OSF.IO/VWA2Q) |
 | preregistrering, metodestudien | [`10.17605/OSF.IO/6J4M5`](https://doi.org/10.17605/OSF.IO/6J4M5) |
 | **erratum, P-målet** | [`10.5281/zenodo.21716493`](https://doi.org/10.5281/zenodo.21716493) |
+| **korpuset som bygger på denne studien** | [`10.5281/zenodo.21737976`](https://doi.org/10.5281/zenodo.21737976) |
+| samme, på OSF | [`10.17605/OSF.IO/RKYZ4`](https://doi.org/10.17605/OSF.IO/RKYZ4) |
+
+### Hva som kom ut av denne studien
+
+Metoden herfra ble brukt til å bygge et **avsnittsjustert norsk–engelsk
+parallellkorpus** over Vigelands *Erindringer* (1918), med redaksjonelt apparat
+som eget lag: 543 avsnitt per kildeflate, tre uavhengige produksjonskjøringer
+over to leverandører, CC BY 4.0. Korpuset viser `isderivedfrom` mot denne
+studiens konsept-DOI.
+
+[`10.5281/zenodo.21737976`](https://doi.org/10.5281/zenodo.21737976)
 
 Kildeutgavene: `978-82-694238-6-0` (Vigeland, *Erindringer*),
 `978-82-694238-7-7`, `978-82-694238-8-4`, `978-82-694238-9-1` (Aars, *Dagbok*).
