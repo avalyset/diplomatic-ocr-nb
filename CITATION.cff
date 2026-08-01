@@ -23,6 +23,9 @@ identifiers:
     value: "10.5281/zenodo.21679144"
     description: "Zenodo — citable archived release (v0.2.0)"
   - type: doi
+    value: "10.5281/zenodo.21716493"
+    description: "Erratum — apparatus-integrity P measure (2026-08-01)"
+  - type: doi
     value: "10.17605/OSF.IO/VWA2Q"
     description: "OSF — identical deposit (mirror)"
 license:

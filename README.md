@@ -105,12 +105,36 @@ uavklart og står som en åpen luke.
 - **Kode** (`src/`): MIT — se [`LICENSE`](LICENSE).
 - **Data og målinger** (`data/`, `results/`): CC BY 4.0 — se [`LICENSE-DATA`](LICENSE-DATA).
 
-## Sitering
+## Sitering · How to cite
 
-Siterbar DOI (arkivert utgivelse v0.2.0):
-**[10.5281/zenodo.21679144](https://doi.org/10.5281/zenodo.21679144)** (Zenodo).
+### Alle identifikatorer
 
-Speil (identisk avlevering) på OSF: [10.17605/OSF.IO/VWA2Q](https://doi.org/10.17605/OSF.IO/VWA2Q).
-Preregistrering (supplement): [10.17605/OSF.IO/6J4M5](https://doi.org/10.17605/OSF.IO/6J4M5).
+| hva | DOI |
+|---|---|
+| **denne utgivelsen** (v0.2.0, Zenodo) | [`10.5281/zenodo.21679144`](https://doi.org/10.5281/zenodo.21679144) |
+| konsept-DOI (alle versjoner) | [`10.5281/zenodo.21679143`](https://doi.org/10.5281/zenodo.21679143) |
+| speil, identisk avlevering (OSF-node) | [`10.17605/OSF.IO/VWA2Q`](https://doi.org/10.17605/OSF.IO/VWA2Q) |
+| preregistrering, metodestudien | [`10.17605/OSF.IO/6J4M5`](https://doi.org/10.17605/OSF.IO/6J4M5) |
+| **erratum, P-målet** | [`10.5281/zenodo.21716493`](https://doi.org/10.5281/zenodo.21716493) |
 
-Se [`CITATION.cff`](CITATION.cff) for fullstendige metadata.
+Kildeutgavene: `978-82-694238-6-0` (Vigeland, *Erindringer*),
+`978-82-694238-7-7`, `978-82-694238-8-4`, `978-82-694238-9-1` (Aars, *Dagbok*).
+
+### BibTeX
+
+```bibtex
+@software{nicolaysen_diplomatic_ocr_nb_2026,
+  author    = {Nicolaysen, Eirik Botten},
+  title     = {Diplomatarisk troskap i {OCR} av norsk typoskript},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {0.2.0},
+  doi       = {10.5281/zenodo.21679144},
+  url       = {https://github.com/avalyset/diplomatic-ocr-nb},
+  note      = {Se erratum 10.5281/zenodo.21716493 for P-målet}
+}
+```
+
+**Siterer du P-tabellen, må erratumet siteres med den.** Se § Erratum øverst.
+
+Se [`CITATION.cff`](CITATION.cff) for maskinlesbare metadata.
